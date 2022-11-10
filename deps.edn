@@ -1,0 +1,15 @@
+{:paths [;; Notebookit löytyy "notebooks" hakemistosta
+         "notebooks"
+
+         ;; REPL apuri user.clj löytyy "dev" hakemistosta
+         "dev"]
+ :deps {io.github.nextjournal/clerk {:git/sha "fa0ddcf000bbcd211008c93d8bd0b3047629f6b6"}
+
+        ;; HTTP kyselyjen tekoon (esim. data haku rajapinnoista)
+        clj-http/clj-http {:mvn/version "3.12.3"}
+
+        ;; JSON merkijonojen parsintaan Clojure tietorakenteiksi
+        metosin/jsonista {:mvn/version "0.3.6"}
+
+        ;; Tiedostojen käsittelyyn
+        babashka/fs {:mvn/version "0.1.11"}}}
