@@ -8,21 +8,23 @@
 
 ;; Ensin haetaan paikkakunnan koordinaatit
 
-(def espoo (-> (http/get "https://geocoding-api.open-meteo.com/v1/search"
-                         {:query-params {"name" "Espoo"}})
-               :body
-               (json/read-value json/keyword-keys-object-mapper)
-               :results
-               first
-               (select-keys [:latitude :longitude])))
+(def paikkakunta "Espoo")
+
+(def koordinaatit (-> (http/get "https://geocoding-api.open-meteo.com/v1/search"
+                                {:query-params {"name" paikkakunta}})
+                      :body
+                      (json/read-value json/keyword-keys-object-mapper)
+                      :results
+                      first
+                      (select-keys [:latitude :longitude])))
 
 
 ;; Sitten haetaan ennuste
 
-(def weather (-> (http/get "https://api.open-meteo.com/v1/forecast"
+(def ennuste (-> (http/get "https://api.open-meteo.com/v1/forecast"
                            {:query-params {"hourly" "temperature_2m"
-                                           "latitude" (:latitude espoo)
-                                           "longitude" (:longitude espoo)}})
+                                           "latitude" (:latitude koordinaatit)
+                                           "longitude" (:longitude koordinaatit)}})
                  :body
                  (json/read-value json/keyword-keys-object-mapper)
                  :hourly))
@@ -36,8 +38,8 @@
 (def data (map (fn [temp time]
                  {:temp temp
                   :time time})
-               (:temperature_2m weather)
-               (:time weather)))
+               (:temperature_2m ennuste)
+               (:time ennuste)))
 
 ;; Sitten tehdään graafi
 
