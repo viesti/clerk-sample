@@ -1,6 +1,12 @@
-# [Clerk](https://github.com/nextjournal/clerk) esimerkki
+# Datan visualisointi työpaja käyttäen [Clerk](https://github.com/nextjournal/clerk) notebookia Clojurella
 
-Suositus on käyttää "Jack-in" toimintoa REPL käynnistämiseen, tämän kautta IDEt lataavat työkalut esim. "autocomplete" varten.
+[Clerk](https://github.com/nextjournal/clerk) on Clojurelle tehty notebook työkalu jolla "luodaan Clojure nimiavaruudesta notebook":
+
+<img width="856" alt="image" src="https://user-images.githubusercontent.com/57011/201387085-b6387103-79dd-4987-957d-046cea496f5c.png">
+
+## Clerk esimerkki tässä repossa
+
+Suositus on käyttää "Jack-in" toimintoa REPL käynnistämiseen, tämän kautta IDEt lataavat työkalut esim. "autocompletea" varten.
 
 VSCodessa "Open Folder" niin projekti tunnistetaan ja Repl yhteys tarjoaa "Jack-in" toimintoa.
 
