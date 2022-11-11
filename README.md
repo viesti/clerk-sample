@@ -10,7 +10,6 @@ Tämän jälkeen avaa "dev/user.clj" tiedosto, evaluoi `(ns user...)` koodinpät
 
 * Clerk dokumentaatio: https://book.clerk.vision/
 * Parturikampaamot Suomessa notebook: https://github.com/jhimanka/parturit
-  * Päivitä `pxnet2.stat.fi` -> `pxdata.stat.fi`, sillä linkit ovat vaihtuneet
 * Clerk demorepo: https://github.com/nextjournal/clerk-demo/
 * Linkkejä muihin notebookeihin: https://clerk.vision/
 * Nykysuomen sanalista: https://kaino.kotus.fi/sanat/nykysuomi/
