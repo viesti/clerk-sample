@@ -51,3 +51,13 @@
                            :type "temporal"}
                       "y" {:field "temp"
                            :type "quantitative"}}})
+
+;; Muuta kokeiltavaa (siirrä pois `comment` muodosta kokeiltavaksi)
+
+(comment
+  ;; Taulukko
+  (clerk/table data)
+
+  ;; Kuva
+  (javax.imageio.ImageIO/read (java.net.URL. "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/The_Sower.jpg/1510px-The_Sower.jpg"))
+  )
