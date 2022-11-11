@@ -17,5 +17,7 @@
   (clerk/show! "notebooks/saa.clj")
 
   ;; Tällä saa tehtyä notebookista html sivun
-  (clerk/build-static-app! {:paths ["notebooks/saa.clj"]})
+  ;; Tulos kirjoittuu public/build/notebooks/saa.html polkuun
+  (clerk/build! {:paths ["notebooks/saa.clj"]})
+
   )
