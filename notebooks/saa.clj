@@ -4,13 +4,19 @@
             [jsonista.core :as json]
             [nextjournal.clerk :as clerk]))
 
-;; Piirretään säädataa
+;; # Piirretään säädataa
+
+;; Alla olevat esimerkkikoodit on otettu pois evaluoinnista `#_` komennolla.
+
+;; Ota yksi kerrallaan `#_` komento pois ja katso miltä tulos näyttää Clerkin avaamassa selaimessa.
+
+;; Näin voi ottaa selvää mitä koodi tekee :)
 
 ;; Ensin haetaan paikkakunnan koordinaatit
 
-(def paikkakunta "Espoo")
+#_(def paikkakunta "Espoo")
 
-(def koordinaatit (-> (http/get "https://geocoding-api.open-meteo.com/v1/search"
+#_(def koordinaatit (-> (http/get "https://geocoding-api.open-meteo.com/v1/search"
                                 {:query-params {"name" paikkakunta}})
                       :body
                       (json/read-value json/keyword-keys-object-mapper)
@@ -21,7 +27,7 @@
 
 ;; Sitten haetaan ennuste
 
-(def ennuste (-> (http/get "https://api.open-meteo.com/v1/forecast"
+#_(def ennuste (-> (http/get "https://api.open-meteo.com/v1/forecast"
                            {:query-params {"hourly" "temperature_2m"
                                            "latitude" (:latitude koordinaatit)
                                            "longitude" (:longitude koordinaatit)}})
@@ -35,15 +41,19 @@
 ;; Ensin muunnetaan dataa hieman
 
 
-(def data (map (fn [temp time]
+#_(def data (map (fn [temp time]
                  {:temp temp
                   :time time})
                (:temperature_2m ennuste)
                (:time ennuste)))
 
+;; Katsotaan aluksi taulukon avulla miltä data näyttää
+
+#_(clerk/table data)
+
 ;; Sitten tehdään graafi
 
-(clerk/vl {:width 800
+#_(clerk/vl {:width 800
            :height 600
            :data {:values data}
            :mark "line"
@@ -52,12 +62,9 @@
                       "y" {:field "temp"
                            :type "quantitative"}}})
 
-;; Muuta kokeiltavaa (siirrä pois `comment` muodosta kokeiltavaksi)
+;; Muuta kokeiltavaa
 
-(comment
-  ;; Taulukko
-  (clerk/table data)
+;; Kuvan saa näkyviin lukemalla se Javan ImageIO kirjaston avulla
 
-  ;; Kuva
-  (javax.imageio.ImageIO/read (java.net.URL. "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/The_Sower.jpg/1510px-The_Sower.jpg"))
-  )
+#_(javax.imageio.ImageIO/read (java.net.URL. "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/The_Sower.jpg/1510px-The_Sower.jpg"))
+  
