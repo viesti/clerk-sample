@@ -6,6 +6,8 @@
 
 ## Clerk esimerkki tässä repossa
 
+Notebookin käyttö toimii parhaiten siten, että pidetään editorin ikkuna ja selaimen ikkuna vierekkäin, jolloin koodi ja tulos on samaan aikaan näkyvissä.
+
 Suositus on käyttää "Jack-in" toimintoa REPL käynnistämiseen, tämän kautta IDEt lataavat työkalut esim. "autocompletea" varten.
 
 VSCodessa "Open Folder" niin projekti tunnistetaan ja Repl yhteys tarjoaa "Jack-in" toimintoa.
