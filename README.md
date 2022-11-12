@@ -4,6 +4,12 @@
 
 <img width="856" alt="image" src="https://user-images.githubusercontent.com/57011/201387085-b6387103-79dd-4987-957d-046cea496f5c.png">
 
+## Mikä on "notebook"
+
+Notebookit ovat eräänlaisia sähköisiä "muistkirjoja". Vähän kuten muistivihko, johon kynällä kirjoitetaan ja piirretään kuvia, kirjoitetaan ja piirretään notebookeihin, mutta käyttäen koodia tuottamaan tekstiä ja kuvia.
+
+Tiedon visualisointia tehdään esimerkiksi mediassa ja tieteellisissä julkaisuissa, mutta notebookeissa erityistä on, että monesti visualisointi tuotetaan koodin avulla.
+
 ## Clerk esimerkki tässä repossa
 
 Notebookin käyttö toimii parhaiten siten, että pidetään editorin ikkuna ja selaimen ikkuna vierekkäin, jolloin koodi ja tulos on samaan aikaan näkyvissä.
