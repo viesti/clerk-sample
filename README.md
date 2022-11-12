@@ -30,3 +30,11 @@ Tämän jälkeen avaa "dev/user.clj" tiedosto, evaluoi `(ns user...)` koodinpät
   * Voidaan koodata vaikka visualisointi sanoissa esiintyvien kirjainten määrästä
 * https://www.avoindata.fi/fi
   * Täältä löytyy monta datalähdettä, joista voidaan harjoitella datan hakua ja visualisointia
+* Vega-Lite
+  * Visualisointikirjasto, joka pohjaa datalla tehtyyn kuvaukseen, jonka perusteella JavaScript kirjasto tekee visualisointia
+  * Käytössä Clerk -kirjastossa, `clerk/vl` funktiolla
+    * Clojure sopii Vega-Lite kanssa hyvin yhteen, sillä data jota Vega-Lite piirtäjä tulkitsee, on mielekästä luoda Clojurella
+  * Dokumentaatio löytyy https://vega.github.io/vega-lite/
+  * Eräs interaktiivinen esimerkki maalämpöpumpun säätökäyrän visualisoinnista: https://tiuhti-web.s3.amazonaws.com/saatokayra/index.html
+    * Tässä esimerkissä käytetty myös kontrolleja (kuvaajan alla "muutos" ja "muutos_raja")
+  * Kirjaston luojilta hyvä esitys siitä, mistä Vega-Lite on tullut ja mitä sillä voi tehdä: https://www.youtube.com/watch?v=9uaHRWj04D4
