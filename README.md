@@ -22,3 +22,5 @@ Tämän jälkeen avaa "dev/user.clj" tiedosto, evaluoi `(ns user...)` koodinpät
 * Linkkejä muihin notebookeihin: https://clerk.vision/
 * Nykysuomen sanalista: https://kaino.kotus.fi/sanat/nykysuomi/
   * Voidaan koodata vaikka visualisointi sanoissa esiintyvien kirjainten määrästä
+* https://www.avoindata.fi/fi
+  * Täältä löytyy monta datalähdettä, joista voidaan harjoitella datan hakua ja visualisointia
